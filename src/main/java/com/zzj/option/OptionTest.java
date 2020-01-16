@@ -14,9 +14,4 @@ import java.util.Optional;
  */
 public class OptionTest {
 
-	@Test
-	public void test01() {
-		Optional<Usel> usel;
-
-	}
 }
