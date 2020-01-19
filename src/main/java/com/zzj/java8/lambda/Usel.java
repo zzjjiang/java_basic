@@ -1,6 +1,4 @@
-package com.zzj.lambda;
-
-import java.math.BigDecimal;
+package com.zzj.java8.lambda;
 
 /**
  * @author jone

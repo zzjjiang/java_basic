@@ -1,6 +1,5 @@
-package com.zzj.timetest;
+package com.zzj.java8.timetest;
 
-import org.apache.commons.lang3.time.DateUtils;
 import org.junit.Test;
 
 import java.time.*;
@@ -28,44 +27,31 @@ public class LocaldateTest {
 		System.out.println(dateTime1);
 	}
 
+	/**
+	 * localDateTime 转换成对应的字符串类型
+	 */
 	@Test
 	public void test() {
 		System.out.println(LocalDateTime.of(LocalDate.now(), LocalTime.MAX).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
 	}
 
+	/**
+	 * 获取时间戳
+	 */
 	@Test
 	public void test2() {
-		Long stamp = getTimestamp("10:40");
-		System.out.println(stamp);
 		System.out.println(currentTime.toInstant(ZoneOffset.of("+8")).toEpochMilli());
 	}
 
-	private Long getTimestamp(String time) {
-		LocalDateTime dateTime = getLocalDateTime(time);
-		return dateTime.toInstant(ZoneOffset.of("+8")).toEpochMilli();
-	}
 
-	public static LocalDateTime getLocalDateTime(String timeStr) {
-		String[] times = timeStr.split(":");
-		LocalTime time = LocalTime.of(Integer.parseInt(times[0]), Integer.parseInt(times[1]));
-		LocalDate date = LocalDate.now();
-		return LocalDateTime.of(date, time);
-	}
-
-	@Test
-	public void test3() {
-		String s = "2019-11-01 09:44:07.0";
-		String s1 = s.substring(11, 19);
-		System.out.println("--" + s1);
-
-	}
-
+	/**
+	 * 根据时间戳 转换成对应的时间
+	 */
 	@Test
 	public void test4() {
 		long timestamp = System.currentTimeMillis();
 		System.out.println(timestamp);
 		LocalDateTime localDateTime = Instant.ofEpochMilli(1577203200000L).atZone(ZoneOffset.ofHours(8)).toLocalDateTime();
-
 		System.out.println(localDateTime);
 	}
 }

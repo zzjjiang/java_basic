@@ -1,12 +1,10 @@
-package com.zzj.timetest;
+package com.zzj.java8.timetest;
 
-import org.apache.commons.lang3.time.DateUtils;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author jone
@@ -60,13 +58,7 @@ public class ShowTImeTest {
 	}
 
 	@Test
-	public void test01() {
-		System.out.println(getPartyTime("2019-11-13 15:51"));
-	}
-
-	@Test
 	public void test02() {
-//		LocalDateTime dateTime = LocalDateTime.parse("2019-11-11 15:51:00.0".substring(0,16), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
 		System.out.println("2019-11-11 15:51:00.0".substring(0, 16));
 	}
 

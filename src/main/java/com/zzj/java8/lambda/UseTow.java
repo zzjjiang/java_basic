@@ -1,4 +1,4 @@
-package com.zzj.lambda;
+package com.zzj.java8.lambda;
 
 /**
  * @author jone

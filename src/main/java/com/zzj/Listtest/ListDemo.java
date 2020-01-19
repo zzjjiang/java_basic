@@ -2,10 +2,8 @@ package com.zzj.Listtest;
 
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @author jone
@@ -15,7 +13,7 @@ import java.util.stream.Collectors;
  */
 public class ListDemo {
 	@Test
-	public void ytest() {
+	public void subListTest() {
 		List<Integer> userIds = new ArrayList<>();
 		userIds.add(1);
 		userIds.add(2);
