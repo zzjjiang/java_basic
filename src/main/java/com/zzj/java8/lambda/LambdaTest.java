@@ -94,11 +94,5 @@ public class LambdaTest {
 	}
 
 
-	@Test
-	public void flatMapTest() {
-		List<String> list = Arrays.asList("hello", "world");
-		List<String> collect = list.stream().map(s -> s.split("")).flatMap(Arrays::stream).distinct().collect(toList());
-		System.out.println(JSON.toJSONString(collect));
-	}
 
 }
