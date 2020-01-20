@@ -43,8 +43,8 @@ public class OptionalTest {
 		Employee emp = op.orElse(new Employee("张三"));
 		System.out.println(emp);
 
-		Employee emp2 = op.orElseGet(() -> new Employee());
-		System.out.println(emp2);
+		//Employee emp2 = op.orElseGet(() -> new Employee());
+		//System.out.println(emp2);
 	}
 
 	@Test
