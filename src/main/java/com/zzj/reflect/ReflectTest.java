@@ -10,15 +10,12 @@ import java.lang.reflect.Method;
 
 /**
  * 区别一
- *
  * 　　在方法名末尾有s的是返回一个数组，没有s的是返回单个构造器。
  *
  * 区别二
- *
  * 　　在方法名中加Declared的是返回所有的构造方法，不加Declared的只返回public访问权限的构造器
  *
  * 区别三
- *
  * 　　有参数的都是在方法名中没有在结尾处加s的，返回的是指定参数类型的构造器
  *
  *
@@ -70,5 +67,11 @@ public class ReflectTest {
         field.setAccessible(true);
         System.out.println(field.get(pojo));
 
+    }
+
+    @Test
+    public void test1(){
+        ClassLoader classLoader = ReflectPOJO.class.getClassLoader();
+        System.out.println(classLoader);
     }
 }
