@@ -2,10 +2,12 @@ package com.zzj.clazz;
 
 public class InterfaceTest implements TowTest{
 
+    @Override
     public void run() {
 
     }
 
+    @Override
     public void tow() {
 
     }

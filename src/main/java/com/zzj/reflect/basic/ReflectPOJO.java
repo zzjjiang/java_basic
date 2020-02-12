@@ -1,28 +1,19 @@
-package com.zzj.reflect;
-
-import javax.annotation.Resource;
+package com.zzj.reflect.basic;
 
 public class ReflectPOJO{
 
-    @Resource
-    private String name  = "jone";
+    @MyAnnotation(value = "zzj")
+    private String name;
 
-    private Integer age = 17;
+    private Integer age;
 
-    private ReflectPOJO(){
-        System.out.println("no");
-    }
+    private int grade;
 
-    public ReflectPOJO(String name,Integer age){
-        this.name = name;
-        this.age = age;
-        System.out.println("tow");
-    }
+    private ReflectParent parent;
 
     public void test(){
         System.out.println("test");
     }
-
 
     public void testName(String name){
         System.out.println("test name");
@@ -32,8 +23,6 @@ public class ReflectPOJO{
         System.out.println("test age");
         return age;
     }
-
-
 
 
     public String getName() {
@@ -50,5 +39,22 @@ public class ReflectPOJO{
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public ReflectParent getParent() {
+        return parent;
+    }
+
+    public void setParent(ReflectParent parent) {
+        this.parent = parent;
+    }
+
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
 }

@@ -1,4 +1,4 @@
-package com.zzj.reflect;
+package com.zzj.reflect.basic;
 
 import org.junit.Test;
 
@@ -7,6 +7,7 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Type;
 
 /**
  * 区别一
@@ -62,7 +63,7 @@ public class ReflectTest {
         }
 
 
-        ReflectPOJO pojo = new ReflectPOJO("zzj",24);
+        ReflectPOJO pojo = new ReflectPOJO();
         Field field = pojo.getClass().getDeclaredField("name");
         field.setAccessible(true);
         System.out.println(field.get(pojo));
@@ -73,5 +74,25 @@ public class ReflectTest {
     public void test1(){
         ClassLoader classLoader = ReflectPOJO.class.getClassLoader();
         System.out.println(classLoader);
+    }
+
+    @Test
+    public void print(){
+        Class<ReflectPOJO> clazz = ReflectPOJO.class;
+
+        Field[] declaredFields = clazz.getDeclaredFields();
+        for (Field field: declaredFields) {
+            System.out.println(field.getType() + "---" + field.getName());
+
+        }
+    }
+
+
+    @Test
+    public void testAn() throws NoSuchFieldException {
+        Class<ReflectPOJO> clazz = ReflectPOJO.class;
+        Field field = clazz.getDeclaredField("name");
+        String value = field.getAnnotation(MyAnnotation.class).value();
+        System.out.println(value);
     }
 }
