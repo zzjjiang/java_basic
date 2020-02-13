@@ -2,12 +2,10 @@ package com.zzj.reflect.basic;
 
 import org.junit.Test;
 
-import javax.annotation.Resource;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.lang.reflect.Type;
 
 /**
  * 区别一
@@ -44,7 +42,7 @@ public class ReflectTest {
 
         Field[] declaredFields = clazz.getDeclaredFields();
         for (Field field: declaredFields) {
-            System.out.println(field.isAnnotationPresent(Resource.class));
+            System.out.println(field.isAnnotationPresent(MyAnnotation.class));
             System.out.println(field.getType() + "---" + field.getName());
 
         }
