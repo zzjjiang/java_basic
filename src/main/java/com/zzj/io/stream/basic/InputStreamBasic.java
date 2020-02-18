@@ -1,4 +1,4 @@
-package com.zzj.io.stream;
+package com.zzj.io.stream.basic;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,6 +19,7 @@ import java.io.InputStream;
  */
 public class InputStreamBasic {
     public static void main(String[] args) throws Exception {
+        long start = System.currentTimeMillis();
         String pathName = "/Users/zujiangzou/Desktop/demotest/test.txt";
         File file = new File(pathName);
         InputStream inputStream = new FileInputStream(file);
@@ -29,5 +30,6 @@ public class InputStreamBasic {
         int len = inputStream.read(bytes);
         System.out.println(new String(bytes,0,len));
         inputStream.close();
+        System.out.println(System.currentTimeMillis() - start);
     }
 }

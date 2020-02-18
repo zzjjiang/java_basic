@@ -1,4 +1,4 @@
-package com.zzj.io.stream;
+package com.zzj.io.stream.basic;
 
 import java.io.File;
 import java.io.FileReader;
