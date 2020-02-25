@@ -24,6 +24,8 @@ package com.zzj.stringdemo;
  *
  *
  * “a”+"b"静态常量池。  在加载的时候变成一个
+ *
+ * intern()作用：1 加入常量池（运行时也可以将常量加入池中）  2返回常量池引用
  */
 public class StringInternDemo {
 
