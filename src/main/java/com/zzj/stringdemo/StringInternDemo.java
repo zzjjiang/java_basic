@@ -15,15 +15,8 @@ package com.zzj.stringdemo;
  *
  * 对象池的目的：实现数据的共享处理；
  *
- * 在java中，对象的常量池分为两种：
- * 静态常量池
- * 指的是程序(*.class)在加载的时候会自动将此程序的字符串、普通常量、类和方法信息
  *
- * 运行时常量池
- * 当一个程序(*.class)加载之后，里面可能有一些变量，提供的常量池
- *
- *
- * “a”+"b"静态常量池。  在加载的时候变成一个
+ * “a”+"b"  在加载的时候变成一个
  *
  * intern()作用：1 加入常量池（运行时也可以将常量加入池中）  2返回常量池引用
  */
@@ -45,13 +38,13 @@ public class StringInternDemo {
         String intern = s2.intern();
         System.out.println(s1 == intern);
 
-        //静态池
+        //静态
         String sj = "www.jone.com";
         String staticStr = "www." + "jone" + ".com";
         System.out.println(sj == staticStr);
 
 
-        //此处有变量，为运行时常量池
+        //此处有变量
         String info = "jone";
         String staticStr2 = "www." + info + ".com";
         System.out.println(sj == staticStr2);
