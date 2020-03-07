@@ -7,6 +7,7 @@ public class Trader {
 	private String city;
 
 	public Trader() {
+		this.name = "zzj";
 	}
 
 	public Trader(String name, String city) {
@@ -33,6 +34,12 @@ public class Trader {
 	@Override
 	public String toString() {
 		return "Trader [name=" + name + ", city=" + city + "]";
+	}
+
+	public static void main(String[] args) {
+		Trader trader = new Trader();
+		trader.name = "yy";
+		System.out.println(trader.getName());
 	}
 
 }
