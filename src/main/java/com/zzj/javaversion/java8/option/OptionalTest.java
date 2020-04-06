@@ -34,8 +34,8 @@ public class OptionalTest {
 
 	@Test
 	public void test3() {
-		Optional<Employee> op = Optional.ofNullable(new Employee());
-
+//		Optional<Employee> op = Optional.of(new Employee());
+		Optional<Employee> op = Optional.ofNullable(null);
 		if (op.isPresent()) {
 			System.out.println(op.get());
 		}
