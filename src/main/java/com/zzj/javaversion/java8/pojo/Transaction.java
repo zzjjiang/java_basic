@@ -1,4 +1,4 @@
-package com.zzj.java8.pojo;
+package com.zzj.javaversion.java8.pojo;
 
 //交易类
 public class Transaction {

@@ -1,10 +1,9 @@
-package com.zzj.java8.lambda.lambdaDesc;
+package com.zzj.javaversion.java8.lambda.lambdaDesc;
 
-import com.zzj.java8.lambda.Employee;
+import com.zzj.javaversion.java8.lambda.Employee;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -52,12 +51,7 @@ public class LambdaDescTest {
 	public void test() {
 		//jdk 1.7 前，必须是 final
 		int num = 1;
-		Runnable r = new Runnable() {
-			@Override
-			public void run() {
-				System.out.println(num);
-			}
-		};
+		Runnable r = () -> System.out.println(num);
 		r.run();
 	}
 
@@ -81,7 +75,7 @@ public class LambdaDescTest {
 
 	@Test
 	public void test1() {
-		Collections.sort(emps, (e1, e2) -> {
+		emps.sort((e1, e2) -> {
 			if (e1.getAge() == e2.getAge()) {
 				return e1.getName().compareTo(e2.getName());
 			} else {

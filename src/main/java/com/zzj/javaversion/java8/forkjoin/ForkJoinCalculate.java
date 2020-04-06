@@ -1,4 +1,4 @@
-package com.zzj.java8.forkjoin;
+package com.zzj.javaversion.java8.forkjoin;
 
 import java.util.concurrent.RecursiveTask;
 

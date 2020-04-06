@@ -1,9 +1,9 @@
-package com.zzj.java8.option;
+package com.zzj.javaversion.java8.option;
 
-import com.zzj.java8.lambda.Employee;
-import com.zzj.java8.option.pojo.Godness;
-import com.zzj.java8.option.pojo.Man;
-import com.zzj.java8.option.pojo.NewMan;
+import com.zzj.javaversion.java8.lambda.Employee;
+import com.zzj.javaversion.java8.option.pojo.Godness;
+import com.zzj.javaversion.java8.option.pojo.Man;
+import com.zzj.javaversion.java8.option.pojo.NewMan;
 import org.junit.Test;
 
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package com.zzj.java8.timetest;
+package com.zzj.javaversion.java8.timetest;
 
 import org.junit.Test;
 

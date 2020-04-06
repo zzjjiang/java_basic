@@ -1,15 +1,12 @@
-package com.zzj.java8.stream;
+package com.zzj.javaversion.java8.stream;
 
 import com.alibaba.fastjson.JSON;
-import com.zzj.java8.pojo.Trader;
-import com.zzj.java8.pojo.Transaction;
+import com.zzj.javaversion.java8.pojo.Trader;
+import com.zzj.javaversion.java8.pojo.Transaction;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
@@ -41,16 +38,20 @@ public class TestStreamAPITest {
 		);
 	}
 
-	//1. 找出2011年发生的所有交易， 并按交易额排序（从低到高）
+	/**
+	 * 1. 找出2011年发生的所有交易， 并按交易额排序（从低到高）
+	 */
 	@Test
 	public void test1() {
 		transactions.stream()
 				.filter((t) -> t.getYear() == 2011)
-				.sorted((t1, t2) -> Integer.compare(t1.getValue(), t2.getValue()))
+				.sorted(Comparator.comparingInt(Transaction::getValue))
 				.forEach(System.out::println);
 	}
 
-	//2. 交易员都在哪些不同的城市工作过？
+	/**
+	 * 2. 交易员都在哪些不同的城市工作过？
+	 */
 	@Test
 	public void test2() {
 		transactions.stream()
@@ -65,12 +66,14 @@ public class TestStreamAPITest {
 		transactions.stream()
 				.filter((t) -> t.getTrader().getCity().equals("Cambridge"))
 				.map(Transaction::getTrader)
-				.sorted((t1, t2) -> t1.getName().compareTo(t2.getName()))
+				.sorted(Comparator.comparing(Trader::getName))
 				.distinct()
 				.forEach(System.out::println);
 	}
 
-	//4. 返回所有交易员的姓名字符串，按字母顺序排序
+	/**
+	 * 	4. 返回所有交易员的姓名字符串，按字母顺序排序
+	 */
 	@Test
 	public void test4() {
 		transactions.stream()
@@ -128,7 +131,9 @@ public class TestStreamAPITest {
 	}
 
 
-	//7. 所有交易中，最高的交易额是多少
+	/**
+	 * 	7. 所有交易中，最高的交易额是多少
+	 */
 	@Test
 	public void test7() {
 		Optional<Integer> max = transactions.stream()
@@ -142,7 +147,7 @@ public class TestStreamAPITest {
 	@Test
 	public void test8() {
 		Optional<Transaction> op = transactions.stream()
-				.min((t1, t2) -> Integer.compare(t1.getValue(), t2.getValue()));
+				.min(Comparator.comparingInt(Transaction::getValue));
 
 		System.out.println(op.get());
 	}

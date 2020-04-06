@@ -1,4 +1,4 @@
-package com.zzj.java8.lambda.function;
+package com.zzj.javaversion.java8.lambda.function;
 
 import org.junit.Test;
 
@@ -31,7 +31,9 @@ import java.util.function.Supplier;
  * @author Jone
  */
 public class FunctionTest {
-	//Predicate<T> t->boolean  断言型接口
+	/**
+	 * 	Predicate<T> t->boolean  断言型接口
+	 */
 	@Test
 	public void predicateTest() {
 		List<String> list = Arrays.asList("Hello", "tustman", "Lambda", "www", "ok");
