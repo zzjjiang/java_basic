@@ -1,0 +1,4 @@
+Builder：抽象建造者 (我们经常会看到AbstractXXXX类)
+ConcreteBuilder：具体建造者
+Director：指挥者
+Product：产品角色

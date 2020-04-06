@@ -1,4 +1,4 @@
-package com.zzj.designPattern.template;
+package com.zzj.designpattern.template;
 
 /**
  * 这里用一句话描述这个类的作用

@@ -1,4 +1,4 @@
-package com.zzj.designPattern.entrust;
+package com.zzj.designpattern.entrust;
 
 /**
  * 委托设计模式

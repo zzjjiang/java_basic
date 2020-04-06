@@ -1,4 +1,4 @@
-package com.zzj.designPattern.template;
+package com.zzj.designpattern.template;
 
 /**
  * 模板设计模式

@@ -14,7 +14,7 @@ public class OtherClass {
         strList.addAll(Arrays.asList(str2));
         List<Integer> intList = strList.stream().map(Integer::parseInt).collect(Collectors.toList());
         List<Integer> result = intList.stream().distinct().sorted().collect(Collectors.toList());
-        System.out.println(result);*/
+        System.out.println(result);
         for (int big = 0; big < 200; big++) {
             for (int middle = 0; middle < 200; middle++) {
                 for (int small = 3; small < 200; small=small+3) {
@@ -26,7 +26,8 @@ public class OtherClass {
                     }
                 }
             }
-        }
+        }*/
+        System.out.println(6&2);
     }
 
     public static void getNums(){

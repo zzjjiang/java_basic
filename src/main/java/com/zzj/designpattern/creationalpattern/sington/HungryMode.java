@@ -1,4 +1,4 @@
-package com.zzj.designPattern.sington;
+package com.zzj.designpattern.creationalpattern.sington;
 
 /**
  * @author Jone

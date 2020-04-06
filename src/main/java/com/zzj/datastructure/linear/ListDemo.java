@@ -1,8 +1,7 @@
 package com.zzj.datastructure.linear;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author Jone
@@ -42,7 +41,7 @@ public class ListDemo {
     }
 
     public static void main(String[] args) {
-        new ListDemo().add(arrayList);
+       /* new ListDemo().add(arrayList);
         new ListDemo().add(linkedList);
 
         new ListDemo().get(arrayList);
@@ -52,7 +51,17 @@ public class ListDemo {
         new ListDemo().remove(linkedList);
 
         List list = new ArrayList();
-        list.add(null);
+        list.add(null);*/
+
+
+        Map map = new HashMap<>(4);
+        map.put("1",2);
+        map.put("1",3);
+        System.out.println(map.get("1"));
+
+        new Hashtable<>();
+        new HashSet();
+        ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
 
     }
 }
