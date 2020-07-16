@@ -54,4 +54,12 @@ public class LocaldateTest {
 		LocalDateTime localDateTime = Instant.ofEpochMilli(1577203200000L).atZone(ZoneOffset.ofHours(8)).toLocalDateTime();
 		System.out.println(localDateTime);
 	}
+	/**
+	 * 获取昨天日期
+	 */
+	@Test
+	public void test5(){
+		String format = LocalDate.now().minusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+		System.out.println(format);
+	}
 }
