@@ -17,10 +17,22 @@ public class SimpleMethodDemo<K> {
         return t;
     }
 
-    //静态方法中出现泛型，必须将方法定义为泛型方法，加上泛型声明
-    public static <K> K test2(K t){
+    // 定义多个泛型类型
+    public <T,E> T test2(E e,T t){
         System.out.println(t);
         return t;
     }
 
+    // 静态方法中出现泛型，必须将方法定义为泛型方法，加上泛型声明
+    public static <K> K test2(K t){
+        System.out.println(t);
+        return t;
+    }
+    /*
+    此种写法会报错
+    public static K test2(K t){
+        System.out.println(t);
+        return t;
+    }
+     */
 }
