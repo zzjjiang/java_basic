@@ -1,4 +1,4 @@
-package com.zzj.designpattern.entrust;
+package com.zzj.designpattern.behavioralpattern.entrust;
 
 /**
  * 这里用一句话描述这个类的作用
@@ -7,9 +7,9 @@ package com.zzj.designpattern.entrust;
  * @date: 2020/01/16 15:45
  * @since JDK 1.8
  */
-public class Oracle implements Company {
+public class Sun implements Company {
 	@Override
 	public void product() {
-		System.out.println("oracle product");
+		System.out.println("sun product");
 	}
 }

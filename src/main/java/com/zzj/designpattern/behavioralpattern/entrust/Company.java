@@ -1,4 +1,4 @@
-package com.zzj.designpattern.entrust;
+package com.zzj.designpattern.behavioralpattern.entrust;
 
 /**
  * 这里用一句话描述这个类的作用

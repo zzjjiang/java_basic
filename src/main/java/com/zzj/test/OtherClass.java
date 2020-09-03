@@ -31,7 +31,6 @@ public class OtherClass {
     }
 
     public static void getNums(){
-
         for (int big = 0; big < 200; big++) {
             for (int middle = 0; middle < 200; middle++) {
                 for (int small = 3; small < 200; small=small+3) {
