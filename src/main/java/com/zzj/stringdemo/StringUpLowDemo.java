@@ -2,6 +2,8 @@ package com.zzj.stringdemo;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * @author Jone
  * @version 1.0.0
@@ -49,5 +51,18 @@ public class StringUpLowDemo {
         //0
         System.out.println(s1.trim().length());
 
+    }
+
+    @Test
+    public void testSplit(){
+        String s1 = "2222|1";
+        String[] ss = s1.split("\\|");
+        System.out.println(ss.length);
+        if(ss.length > 1){
+
+            System.out.println(ss[1]);
+        }else{
+            System.out.println(Arrays.toString(ss));
+        }
     }
 }

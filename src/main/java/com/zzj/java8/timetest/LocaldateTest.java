@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 /**
  * @author jone
@@ -61,5 +62,25 @@ public class LocaldateTest {
 	public void test5(){
 		String format = LocalDate.now().minusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 		System.out.println(format);
+	}
+
+	@Test
+	public void test6(){
+		String s = LocalDate.of(2020,8,24).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
+		LocalDate s1 = LocalDate.of(2020,8,24);
+		LocalDate s2 = LocalDate.of(2020,9,25);
+		LocalDate parse1 = LocalDate.parse("2020-08-24",DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+		LocalDate parse2 = LocalDate.parse("2020-09-24",DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
+		System.out.println(ChronoUnit.DAYS.between(parse1, parse2));
+	}
+
+
+	@Test
+	public void test7(){
+		String s = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+		System.out.println(s);
+		System.out.println(s.substring(0,10));
 	}
 }

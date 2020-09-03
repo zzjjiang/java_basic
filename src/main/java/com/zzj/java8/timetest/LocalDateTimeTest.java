@@ -142,4 +142,13 @@ public class LocalDateTimeTest {
 		System.out.println(ldt.getSecond());
 	}
 
+	@Test
+	public void test22(){
+		LocalTime now = LocalTime.now();
+		int curr = now.toSecondOfDay();
+		LocalTime time = LocalTime.of(23, 59, 59);
+		int end = time.toSecondOfDay();
+		System.out.println(end - curr);
+	}
+
 }
