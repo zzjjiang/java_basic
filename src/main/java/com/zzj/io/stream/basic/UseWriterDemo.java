@@ -34,8 +34,12 @@ public class UseWriterDemo {
         while((len = is.read(bytes)) != -1){
             os.write(bytes,0,len);
         }*/
-        //long l = is.transferTo(os);//
-        //System.out.println(l);
+
+
+
+//       2020 7 13 注以下两行
+//        long l = is.transferTo(os);
+//        System.out.println(l);
         os.close();
         is.close();
     }

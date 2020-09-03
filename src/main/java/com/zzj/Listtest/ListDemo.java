@@ -23,4 +23,13 @@ public class ListDemo {
 		System.out.println(userIds.size());
 		System.out.println(userIds.get(1));
 	}
+
+	@Test
+	public void test(){
+		List<Integer> one = new ArrayList<>();
+		System.out.println(one.get(0));
+		System.out.println(one.size());
+		List<Object> tow = new ArrayList<>();
+		System.out.println(tow.size());
+	}
 }
