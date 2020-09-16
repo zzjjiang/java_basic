@@ -3,6 +3,7 @@ package com.wwq.keywords.transientDome;
 import java.io.*;
 
 /**
+ * java 关键字 之 transient
  * 变量修饰符，用transient关键字标记的成员变量不参与序列化过程。
  */
 public class TransientTest {
