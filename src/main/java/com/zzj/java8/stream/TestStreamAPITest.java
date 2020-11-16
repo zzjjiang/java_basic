@@ -9,7 +9,9 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
@@ -40,6 +42,14 @@ public class TestStreamAPITest {
 				new Transaction(alan, 2012, 950)
 		);
 	}
+
+	@Test
+	public void test111() {
+		Map<Integer, List<Transaction>> collect =
+				transactions.stream().collect(Collectors.groupingBy(Transaction::getYear));
+		System.out.println(JSON.toJSONString(collect));
+	}
+
 
 	//1. 找出2011年发生的所有交易， 并按交易额排序（从低到高）
 	@Test

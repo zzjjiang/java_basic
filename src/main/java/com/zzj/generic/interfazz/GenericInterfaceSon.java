@@ -9,6 +9,7 @@ public class GenericInterfaceSon<T> implements GenericInterfaceDemo <T>{
 
     @Override
     public T test() {
+
         return null;
     }
 }
