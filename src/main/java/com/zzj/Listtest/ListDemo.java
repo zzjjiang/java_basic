@@ -1,9 +1,13 @@
 package com.zzj.Listtest;
 
+import com.alibaba.fastjson.JSON;
+import org.apache.commons.lang3.ArrayUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author jone
@@ -31,5 +35,18 @@ public class ListDemo {
 		System.out.println(one.size());
 		List<Object> tow = new ArrayList<>();
 		System.out.println(tow.size());
+	}
+
+	@Test
+	public void testJiao(){
+		String realPerms = "2,1";
+		String ownPerms = "0,2,1,9,6";
+		List<String> realList = Arrays.stream(realPerms.split(",")).collect(Collectors.toList());
+		List<String> ownList = Arrays.stream(ownPerms.split(",")).collect(Collectors.toList());
+
+		// List<String> ownList = Arrays.asList(ownPerms.split(","));
+		ownList.retainAll(realList);
+		System.out.println(JSON.toJSONString(ownList));
+		System.out.println(String.join(",", ownList));
 	}
 }

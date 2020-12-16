@@ -2,6 +2,9 @@ package com.zzj.stringdemo;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author zzj
  * @description String.format
@@ -13,5 +16,14 @@ public class StringFormatDemo {
     public void testFormat(){
         int s = 1;
         System.out.println(String.format("%02d", s));
+    }
+
+    @Test
+    public void testJoin(){
+        List<String> l = new ArrayList<>();
+        l.add("1");
+        l.add("3");
+        l.add("2");
+        System.out.println(String.join(",", l));
     }
 }

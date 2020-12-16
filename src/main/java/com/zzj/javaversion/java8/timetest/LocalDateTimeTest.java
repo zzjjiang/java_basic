@@ -151,4 +151,26 @@ public class LocalDateTimeTest {
 		System.out.println(end - curr);
 	}
 
+	@Test
+	public void test33() {
+		LocalDateTime ldt = LocalDateTime.now();
+		System.out.println(ldt);
+
+		LocalDateTime ld2 = LocalDateTime.of(2020, 11, 21, 10, 10, 10);
+		System.out.println(ld2);
+
+		if(ldt.isBefore(ld2)){
+			System.out.println("yes");
+		}else{
+			System.out.println("no");
+		}
+
+		try{
+
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+
+	}
+
 }
