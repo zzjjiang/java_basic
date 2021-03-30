@@ -1,13 +1,23 @@
 package com.zzj.javaversion.java8.lambda;
 
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.date.DateField;
+import cn.hutool.core.date.DateTime;
+import cn.hutool.core.date.DateUtil;
 import com.alibaba.fastjson.JSON;
 import org.junit.Test;
+
+import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import static java.util.stream.Collectors.toList;
 
 /**
@@ -94,5 +104,69 @@ public class LambdaTest {
 	}
 
 
+
+	@Test
+	public void test66() throws Exception {
+		String start = "2021-01-25 19:50:11";
+		String end = "2022-03-25 19:50:11";
+		Date startDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(start);
+		Date endDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(end);
+
+		DateTime dateTime = DateUtil.beginOfMonth(startDate);
+		System.out.println(dateTime);
+		DateTime month = DateUtil.offsetMonth(dateTime, 1);
+		System.out.println(month);
+
+		long betweenMonth = DateUtil.betweenMonth(startDate, endDate, true);
+		System.out.println(betweenMonth);
+	}
+
+	@Test
+	public void ziranyue() throws ParseException {
+		String start = "2021-01-25 19:50:11";
+		String end = "2021-03-25 19:50:11";
+		Date startDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(start);
+		Date endDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(end);
+
+		Stream.iterate(DateUtil.beginOfMonth(startDate),
+				date -> DateUtil.offsetMonth(date, 1))
+				.limit(DateUtil.betweenMonth(startDate, endDate, true) + 1)
+				.forEach(date ->
+						System.out.println(date));
+//		System.out.println(DateUtil.offsetDay(DateUtil
+//								.offsetMonth(dateTime, 1), -1)));
+	}
+
+	@Test
+	public void hetongyue() throws ParseException {
+		String start = "2021-01-25 19:50:11";
+		String end = "2021-03-25 19:50:11";
+		Date startDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(start);
+		Date endDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(end);
+
+		Stream.iterate(startDate,
+				date -> DateUtil.offsetMonth(date, 1))
+				.limit(DateUtil.betweenMonth(startDate, endDate, false) + 1)
+				.forEach(dateTime ->
+						System.out.println(DateUtil.offsetDay(DateUtil
+								.offsetMonth(dateTime, 1), -1)));
+	}
+
+	@Test
+	public void jidu() throws ParseException {
+		String start = "2021-01-25 19:50:11";
+		String end = "2021-07-25 19:50:11";
+		Date startDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(start);
+		Date endDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(end);
+		long years = DateUtil.betweenYear(startDate, endDate, true);
+		int quarter1 = DateUtil.quarter(startDate);
+		System.out.println("quarter1--" + quarter1);
+		int quarter2 = DateUtil.quarter(endDate);
+		System.out.println("quarter2--" + quarter2);
+		Stream.iterate(DateUtil.beginOfQuarter(startDate),
+				date -> DateUtil.offsetMonth(date, 3))
+				.limit(years * 4 + (quarter2 - quarter1 + 1))
+				.forEach(date -> System.out.println(date));
+	}
 
 }

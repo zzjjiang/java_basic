@@ -152,7 +152,7 @@ public class TestStreamAPITest {
 	@Test
 	public void test7() {
 		Optional<Integer> max = transactions.stream()
-				.map((t) -> t.getValue())
+				.map(Transaction::getValue)
 				.max(Integer::compare);
 
 		System.out.println(max.get());

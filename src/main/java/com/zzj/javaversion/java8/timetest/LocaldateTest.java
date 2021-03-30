@@ -1,6 +1,7 @@
 package com.zzj.javaversion.java8.timetest;
 
 import com.alibaba.fastjson.JSON;
+import com.zzj.java8.timetest.DateVO;
 import org.junit.Test;
 
 import java.time.*;
@@ -150,5 +151,21 @@ public class LocaldateTest {
     public void stringSub(){
         String date = "2020-11-14 15:05:00";
         System.out.println(date.substring(11,16));
+    }
+
+    @Test
+    public void testWeek(){
+        LocalDate now = LocalDate.now();
+        LocalDate paramDate = now.plusWeeks(2);
+        LocalDate toWeek = now.plusWeeks(2);
+        if(toWeek.isBefore(paramDate)){
+            System.out.println("超出预定时间预定时间内");
+        }else{
+            System.out.println("");
+        }
+        System.out.println("当前时间为：");
+        System.out.println(paramDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+        System.out.println("2周时间为：");
+        System.out.println(toWeek.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
     }
 }
