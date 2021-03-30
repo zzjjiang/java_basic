@@ -14,7 +14,7 @@ import java.util.Date;
 @Accessors(chain = true)
 public class LeaseForeseeBillGenerateVO {
 
-    private Long roomId;
+    private Integer roomId;
 
     private String roomName;
 
@@ -38,11 +38,4 @@ public class LeaseForeseeBillGenerateVO {
         return BeanUtil.toBean(this, LeaseForeseeBillGenerateVO.class);
     }
 
-    @Data
-    public static class Room {
-        private Long roomId;
-        private String roomName;
-        private String floorName;
-        private String buildingName;
-    }
 }

@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Data
 public class LeaseForeseeBillRoomVO implements Serializable {
 
-    private Long roomId;
+    private Integer roomId;
 
     private String roomName;
 

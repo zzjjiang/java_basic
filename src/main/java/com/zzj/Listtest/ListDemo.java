@@ -1,11 +1,13 @@
 package com.zzj.Listtest;
 
 import com.alibaba.fastjson.JSON;
-import org.apache.commons.lang3.ArrayUtils;
+import com.zzj.test.TestVO;
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -48,5 +50,50 @@ public class ListDemo {
 		ownList.retainAll(realList);
 		System.out.println(JSON.toJSONString(ownList));
 		System.out.println(String.join(",", ownList));
+	}
+
+	@Test
+	public void testList(){
+		List<TestVO> optionList = new ArrayList<>();
+		TestVO testVO1 = new TestVO();
+		testVO1.setId("1");
+		testVO1.setName("1name");
+		optionList.add(testVO1);
+		TestVO testVO2 = new TestVO();
+		testVO2.setId("2");
+		testVO2.setName("2name");
+		optionList.add(testVO2);
+		//去掉当前租户--->下拉
+		optionList.removeIf(testVO -> "1".equals(testVO.getId()));
+		System.out.println(JSON.toJSONString(optionList));
+	}
+
+	@Test
+	public void testNull(){
+		Long l = 1L;
+		if(l.equals(null)){
+			System.out.println("haha");
+		}else{
+			System.out.println("gaga");
+		}
+
+	}
+
+	@Test
+	public void testDate(){
+		String format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS").format(new Date());
+		System.out.println(format);
+		String format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS").format(new Date());
+		System.out.println(format1);
+
+	}
+
+	@Test
+	public void subStrDate(){
+		String format = "2021-03-04 10:40:00";
+		System.out.println(format);
+		String format1 = format.substring(0,10);
+		System.out.println(format1);
+
 	}
 }
