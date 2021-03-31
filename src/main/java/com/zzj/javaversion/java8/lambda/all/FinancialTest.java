@@ -116,6 +116,10 @@ public class FinancialTest {
                             );
                 })
                 .filter(vo -> vo.getChargeType() == 1)
+                .peek(vo -> {
+                    vo.setBillingPeriodStart(DateUtil.offsetMonth(new Date(), vo.getRoomId()+1));
+                    vo.setBillingPeriodEnd(DateUtil.offsetMonth(new Date(), vo.getRoomId()+2));
+                })
                 .collect(Collectors.toList());
         System.out.println(JSON.toJSONString(list));
     }
