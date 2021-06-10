@@ -1,5 +1,7 @@
 package com.zzj.stringdemo;
 
+import cn.hutool.core.util.StrUtil;
+import com.zzj.enumdemo.FeeEnum;
 import org.junit.Test;
 
 /**
@@ -34,4 +36,23 @@ public class StringDemo {
 
     }
 
+
+    @Test
+    public void test004(){
+        String template = "{}爱{}，就像老鼠爱大米";
+        String str = StrUtil.format(template, "我", "你");
+        System.out.println(str);
+    }
+
+    @Test
+    public void test005(){
+        System.out.println(FeeEnum.one.getCode());
+        System.out.println(FeeEnum.tow.getCode());
+    }
+
+    @Test
+    public void subString(){
+        String str = "2021-06-10 14:44:46";
+        System.out.println(str.substring(0,16));
+    }
 }

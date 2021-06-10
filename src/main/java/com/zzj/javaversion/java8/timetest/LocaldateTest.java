@@ -1,6 +1,7 @@
 package com.zzj.javaversion.java8.timetest;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.zzj.java8.timetest.DateVO;
 import org.junit.Test;
 
@@ -167,5 +168,50 @@ public class LocaldateTest {
         System.out.println(paramDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
         System.out.println("2周时间为：");
         System.out.println(toWeek.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+    }
+
+
+    @Test
+    public void months(){
+        String startTime = "2021-05-21 16:17:53";
+        LocalDate start = LocalDate.parse(startTime, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        LocalDate now = LocalDate.now();
+        long months = ChronoUnit.MONTHS.between(start, now);
+        System.out.println(months);
+        System.out.println("/-----------" + (months / 12));
+        System.out.println("%-----------" + (months % 12));
+    }
+
+    @Test
+    public void years(){
+        String startTime = "2021-05-21 16:17:53";
+        LocalDate start = LocalDate.parse(startTime, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        System.out.println(start.plusYears(1));
+    }
+
+    @Test
+    public void jsonStr(){
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("asstActType1", "客户");
+        jsonObject.put("asstActName1", "1");
+        jsonObject.put("asstActNumber1", "2");
+        jsonObject.put("asstActType2", "合同");
+        jsonObject.put("asstActName2", "3");
+        jsonObject.put("asstActNumber2", "4");
+        System.out.println(jsonObject.toJSONString());
+    }
+
+    @Test
+    public void forTest(){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if(j== 1){
+                    System.out.println(j);
+                    break;
+                }else{
+                    System.out.println("--" + j);
+                }
+            }
+        }
     }
 }

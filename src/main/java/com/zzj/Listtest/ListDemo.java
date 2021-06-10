@@ -96,4 +96,15 @@ public class ListDemo {
 		System.out.println(format1);
 
 	}
+
+	@Test
+	public void addAll(){
+		List all = new ArrayList<>();
+		List one= new ArrayList<>();
+		one.add(1);
+		List tow = new ArrayList<>();
+		all.addAll(one);
+		all.addAll(tow);
+		System.out.println(all.size());
+	}
 }
